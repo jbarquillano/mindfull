@@ -1,0 +1,522 @@
+* {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* colors used throughout the site */
+/* https://www.w3schools.com/css/css_colors.asp */
+/* root is the parent of all elements */ /* https://www.w3schools.com/cssref/sel_root.php */
+:root {  
+    --primary-color: #e8f5e9; /* light green bg for calm vibes */
+    --primary-color-dark: #dcedc8; /* darker green for breathing effect */
+    --text-color: #333; /* dark gray for easy reading */
+    --link-hover-color: #0056b3; /* blue for interactive elements */
+    --white: #ffffff;
+    --focus-outline-color: #4A90E2; /* blue outline for accessibility */
+}
+
+/* make focused elements easy to spot */
+*:focus {
+    outline: 3px solid var(--focus-outline-color);
+    outline-offset: 2px;
+}
+
+/* text styling */
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+    font-size: 16px;
+    font-family: 'PP Hatton', sans-serif;
+}
+
+/* headings use same font for consistency */
+h1, h2, h3 {
+    font-family: 'PP Hatton', sans-serif;
+    font-weight: bold;
+}
+
+/* make paragraphs more readable */
+p {
+    font-family: 'PP Writer', Georgia, serif;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+/* trying to make the links be obvious but not distracting */
+a:link,
+a:visited {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* links change on hover to give feedback */
+a:hover,
+a:focus {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+/* skip link for keyboard users */
+.skip-to-main-content {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 1em;
+    background-color: var(--white);
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+/* skip link appears on focus */
+.skip-to-main-content:focus {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* index page has full height header */
+body.index header {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+}
+
+/* big title on index */
+body.index .header-left {
+    width: 100%;
+    font-family: 'PP Hatton', sans-serif;
+    font-weight: bold;
+}
+
+/* intro text has max width for readability */
+body.index .header-right {
+    width: 80%;
+    max-width: 800px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    font-family: 'PP Writer', Georgia, serif;
+}
+
+/* benefits page has compact header */
+body.benefits header {
+    position: relative;
+    margin: 0;
+    padding: 1rem 5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+}
+
+/* smaller title on benefits page */
+body.benefits .header-left {
+    font-size: 2rem;
+}
+
+/* nav links in header */
+body.benefits .header-right {
+    display: flex;
+    gap: 2rem;
+    font-size: 1rem;
+}
+
+/* nav links style */
+body.benefits .header-right a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+/* breathing bg animation */
+/* https://www.w3schools.com/css/css3_animations.asp */
+@keyframes breathe {
+    0% { background-color: var(--primary-color); }
+    50% { background-color: var(--primary-color-dark); }
+    100% { background-color: var(--primary-color); }
+}
+
+/* page background */
+/* https://www.w3schools.com/cssref/tryit.php?filename=trycss_animatable */
+.body {
+    background: var(--primary-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation: breathe 8s ease-in-out infinite; /* animation for breathing effect */
+}
+
+/* main content takes remaining space */
+main {
+    flex: 1;
+    padding: 2rem 0;
+}
+
+/* grid for technique cards */
+/* https://www.w3schools.com/w3css/w3css_containers.asp */
+.container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: stretch;
+    padding: 2rem 5%;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+/* white cards for techniques */
+.item {
+    flex: 1;
+    background-color: var(--white);
+    border-radius: 20px;
+    overflow: hidden; /* overflow hidden to clip images */ /* https://www.w3schools.com/css/css_overflow.asp */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+/* cards lift up on hover */
+/* https://www.w3schools.com/cssref/tryit.php?filename=trycss_sel_hover */
+.item:hover,
+.item:focus-within {
+    transform: translateY(-5px);
+}
+
+/* make whole card clickable */
+.item a {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+}
+
+/* card titles */
+.item h2 {
+    margin: 0;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+/* card images */
+.item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin-top: auto;
+}
+
+/* benefits page content */
+.benefits-container {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background-color: var(--white);
+}
+
+/* two column layout for content */
+.content-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 4rem 5%;
+    margin: 0;
+    background: var(--white);
+    border-radius: 0;
+    text-align: left;
+}
+
+/* alternate section backgrounds */
+.content-section:nth-child(even) {
+    background-color: var(--primary-color);
+}
+
+/* space out text content */
+.content-section .text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* big section titles */
+.content-section h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+/* subsection titles */
+.content-section h3 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+    color: var(--text-color);
+}
+
+/* content text */
+.content-section p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+/* full width images */
+.content-section .section-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0;
+}
+
+/* image grid */
+/* https://www.w3schools.com/css/css_image_gallery.asp */
+.image-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+/* gallery images */
+.image-gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* home link style */
+.home-link {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* home link hover */
+.home-link:hover,
+.home-link:focus {
+    color: var(--link-hover-color);
+    text-decoration: none;
+}
+
+/* nav menu layout */
+.header-right {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+/* nav link style */
+.header-right a {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+/* underline animation for nav */
+/* https://www.youtube.com/watch?v=UpJyCDEXEtc */
+.header-right a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--link-hover-color);
+    transition: width 0.3s ease;
+}
+
+/* show underline on hover */
+.header-right a:hover::after,
+.header-right a:focus::after {
+    width: 100%;
+}
+
+/* nav link hover */
+.header-right a:hover,
+.header-right a:focus {
+    color: var(--link-hover-color);
+    text-decoration: none;
+}
+
+/* breakpoints for mobile */
+@media (max-width: 800px) {
+    /* stack content in one column */
+    .content-section {
+        grid-template-columns: 1fr;
+        padding: 2rem 5%;
+        gap: 2rem;
+    }
+
+    /* smaller titles on mobile */
+    .content-section h2 {
+        font-size: 2rem;
+    }
+
+    /* single column images on mobile */
+    .image-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    /* mobile nav styles */
+    body.benefits header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    body.benefits .header-right {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    body.benefits .header-right a {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    /* stack cards on mobile */
+    .container {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    /* full width cards on mobile */
+    .item {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* responsive images */
+    .item img {
+        height: auto;
+        max-height: 400px;
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+
+    /* smaller card titles */
+    .item h2 {
+        font-size: 1.25rem;
+        padding: 1rem;
+    }
+}
+
+/* breakpoints for desktop */
+@media (min-width: 801px) {
+    h1 {
+        font-size: 5rem;
+    }
+
+    h2, h3 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* scroll to top button */
+/* https://www.w3schools.com/howto/howto_js_scroll_to_top.asp */
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s, background-color 0.3s;
+    opacity: 0.7;
+}
+
+#scrollTopBtn:hover {
+    background-color: #0056b3;
+    opacity: 1;
+}
+
+/* CTA = Call to action button style */
+.cta-button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-family: 'PP Hatton', sans-serif;
+    background-color: var(--white);
+    color: var(--text-color);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* CTA button hover effect */
+.cta-button:hover,
+.cta-button:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* align item text */
+.item p {
+    text-align: left;
+}
+
+/* load custom font */
+@import url('pphatton/stylesheet.css');
+@import url('fonts/PP Writer_Woff/stylesheet.css');
+
+/* reduce spacing in these sections */
+.content-section#exercise,
+.content-section#socialization {
+    gap: 2rem;
+    padding: 2rem 5%;
+}
+
+/* less margin under titles */
+.content-section#exercise h2,
+.content-section#socialization h2 {
+    margin-bottom: 1rem;
+}
+
+/* remove bottom margin from text */
+.content-section#exercise p,
+.content-section#socialization p {
+    margin-bottom: 0;
+}
+
+/* tighter text spacing */
+.content-section#exercise .text-content,
+.content-section#socialization .text-content {
+    gap: 1rem;
+}

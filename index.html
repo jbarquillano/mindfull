@@ -1,30 +1,84 @@
 <!-- the html is the bread of the sandwich-->
+<!DOCTYPE html>
 <html lang="en">
 <!-- the head is the sauce-->
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="description" content="Explore mindful living and well-being practices">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Mindfull</title>
-        <link rel="stylesheet" href="style.css">
+        <title>Mindfull - Mindful Living Guide</title>
+        <link rel="stylesheet" href="css/style.css">
+       
 </head>    
-<!--the body is the protein, all content that is visible-->
-<body>
-    <h1>Mindfull</h1>
-    <h2>Techniques</h2>
-        <p>List of various techniques to practice mindfulness</p>
-    <h3>Journaling</h3>
-        <p>Description of benefits of journaling and how to get started</p>
-    <h4>Therapy</h4>
-        <p>Description of benefits of therapy and different types of therapy</p>
-    <h5>Breath-Work</h5>
-        <p>Description of benefits of breathwork and various techniques to try</p>
-    <h6>Exercise</h6>
-        <p>Description of benefits of exercise</p>
-    <h7>Socialization</h7>
-        <p>Description of benefits of socialization</p>
-        <div><a href="techniques.html">Techniques</a></div>
-        <img src="images/hand-turned-away.png">
+<body class="body index">
+    <a href="#main-content" class="skip-to-main-content">Skip to main content</a>
+                <!--the body is the protein, all content that is visible-->
+
+                <!--nesting a button, placing an absolute class into a relative class-->
+                            <!-- <body>
+                                <div class="nav">
+                                    <button class="button">This is a button</button>
+                                </div> -->
+       
+
+      <header role="banner">                         
+     <h1 class="header-left">Mindfull</h1>
+
+     
+
+        <blockquote class="header-right">Mindfull is designed to teach others to slow down live a more mindful lifestyle. The path to achieving a better quality of life and prioritizing your mental and physical well being is never linear, but I hope that this resource finds whoever needs it most.
+        </blockquote>
+        <button class="cta-button" onclick="scrollToTechniques()">explore techniques</button>
+    </header>
+
+        <!-- <div>
+            <img src="images/star_light_trees.jpg">
+        </div> -->
+
+<main role="main">
+    <nav class="container">  
+        <div class="item">
+            <a href="techniques.html">
+                <h2>Journaling</h2>
+                <img src="images/Journaling-5.jpg">
+            </a>
+        </div>
+    
+        <div class="item">    
+            <a href="techniques.html">
+                <h2>Breath-Work</h2>
+                <img src="images/Breathing-3.jpg">
+            </a>
+        </div>
+
+        <div class="item">
+            <a href="techniques.html">
+                <h2>Therapy</h2>
+                <img src="images/Therapy-4.jpg">
+            </a>
+        </div>
+        <div class="item">
+            <a href="techniques.html">
+                <h2>Exercise</h2>
+                <img src="images/Exercise-5.jpg">
+            </a>
+        </div>
+        <div class="item">
+            <a href="techniques.html">
+                <h2>Socialization</h2>
+                <img src="images/Social-1.jpg">
+            </a>
+        </div>
+    </nav>
+</main>
+
+<script>
+    function scrollToTechniques() {
+        document.querySelector('.container').scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
 </body>  
 <!--the second layer of bread of the sandwich-->  
 </html>
