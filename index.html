@@ -37,23 +37,21 @@
             <img src="images/star_light_trees.jpg">
         </div> -->
 
-        <!-- main content section with navigation to techniques page-->
+        <!-- main content section with navigation to techniques page each item placed in a card and linked to the techniques page, I wasnt too sure how to link them to each sections relative position on the techniques page so they all just start at the beginning of the page-->
 <main role="main">
     <nav class="container">  
-        <div class="item">
-            <a href="techniques.html">
-                <h2>Journaling</h2>
-                <img src="images/Journaling-5.jpg">
-            </a>
-        </div>
-    
         <div class="item">    
             <a href="techniques.html">
                 <h2>Breath-Work</h2>
                 <img src="images/Breathing-3.jpg">
             </a>
         </div>
-
+        <div class="item">
+            <a href="techniques.html">
+                <h2>Journaling</h2>
+                <img src="images/Journaling-5.jpg">
+            </a>
+        </div>
         <div class="item">
             <a href="techniques.html">
                 <h2>Therapy</h2>
@@ -75,6 +73,7 @@
     </nav>
 </main>
 
+<!--script to scroll to techniques page-->
 <script>
     function scrollToTechniques() {
         document.querySelector('.container').scrollIntoView({ behavior: 'smooth' });
