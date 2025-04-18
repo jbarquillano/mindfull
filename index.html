@@ -9,7 +9,27 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Mindfull - Mindful Living Guide</title>
         <link rel="stylesheet" href="css/style.css">
-       
+        <style>
+            /* footer styling */
+            footer {
+                background-color: var(--primary-color);
+                padding: 1.5rem 5%;
+                margin-top: 2rem;
+                text-align: center;
+                font-size: 0.8rem;
+                color: var(--text-color);
+            }
+            
+            footer p {
+                margin: 0.5rem 0;
+            }
+            
+            /* button font styling */
+            .cta-button {
+                font-family: 'PP Hatton', sans-serif;
+                font-weight: 500;
+            }
+        </style>
 </head>    
 <body class="body index">
     <a href="#main-content" class="skip-to-main-content">Skip to main content</a>
@@ -33,9 +53,6 @@
         <button class="cta-button" onclick="scrollToTechniques()">explore techniques</button>
     </header>
 
-        <!-- <div>
-            <img src="images/star_light_trees.jpg">
-        </div> -->
 
         <!-- main content section with navigation to techniques page each item placed in a card and linked to the techniques page, I wasnt too sure how to link them to each sections relative position on the techniques page so they all just start at the beginning of the page-->
 <main role="main">
@@ -73,7 +90,13 @@
     </nav>
 </main>
 
-<!--script to scroll to techniques page-->
+<footer>
+    <p>All imagery sourced from <a href="https://unsplash.com" target="_blank">https://unsplash.com</a></p>
+    <p>This site uses PP Hatton and PP Writer sourced from <a href="https://pangrampangram.com" target="_blank">https://pangrampangram.com</a></p>
+    <p>Design and code by Jan-Esmer Arquillano</p>
+</footer>
+
+<!--script for call to action button to have users scroll to techniques page-->
 <script>
     function scrollToTechniques() {
         document.querySelector('.container').scrollIntoView({ behavior: 'smooth' });

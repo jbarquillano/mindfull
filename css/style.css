@@ -71,7 +71,7 @@ p {
     line-height: 1.8;
 }
 
-/* trying to make the links be obvious but not distracting */
+/* trying to make the links be obvious but not super distracting */
 a:link,
 a:visited {
     color: var(--text-color);
