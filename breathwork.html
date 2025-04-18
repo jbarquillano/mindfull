@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Practice breathwork techniques for mindfulness and well-being">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Breathwork - Mindfull</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .breathwork-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 5%;
+        }
+        
+        .breathwork-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin: 2rem auto;
+            display: block;
+        }
+    </style>
+</head>    
+<body class="body benefits">
+    <a href="#main-content" class="skip-to-main-content">Skip to main content</a>
+
+    <header>
+        <h1 class="header-left">
+            <a href="index.html" class="home-link">Mindfull</a>
+        </h1>
+        <nav class="header-right">
+            <a href="techniques.html#breath-work">Back to Techniques</a>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <div class="breathwork-content">
+            <h2>Breathwork Practice</h2>
+            <p>Practice these breathing techniques to improve your mindfulness and well-being.</p>
+            
+            <img src="images/Breathing-1.jpg" class="breathwork-image" alt="Person practicing breathwork">
+            
+            <h3>Breathing Techniques</h3>
+            <p>Try these different breathing techniques:</p>
+            
+            <h4>Diaphragmatic Breathing</h4>
+            <p>Inhale deeply through your nose, allowing your belly to expand. Exhale slowly through your mouth, feeling your belly contract.</p>
+            
+            <h4>Box Breathing</h4>
+            <p>Inhale for 4 seconds, hold for 4 seconds, exhale for 4 seconds, hold for 4 seconds. Repeat.</p>
+            
+            <h4>Alternate Nostril Breathing</h4>
+            <p>Close one nostril while inhaling, then switch nostrils before exhaling. This technique helps balance energy and improve focus.</p>
+        </div>
+    </main>
+    
+    <button id="scrollTopBtn" onclick="scrollToTop()">Top</button>
+    
+    <script>
+        // Scroll to top functionality
+        window.onscroll = function() {
+            let button = document.getElementById("scrollTopBtn");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>  
+</html>

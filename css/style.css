@@ -264,6 +264,7 @@ main {
 }
 
 /* alternate section backgrounds */
+/* https://stackoverflow.com/questions/3084261/alternate-table-row-color-using-css */
 .content-section:nth-child(even) {
     background-color: var(--primary-color);
 }
@@ -546,4 +547,23 @@ main {
 .content-section#exercise .text-content,
 .content-section#socialization .text-content {
     gap: 1rem;
+}
+
+.practice-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--white);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.practice-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background-color: #f8f8f8;
 }
