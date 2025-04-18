@@ -87,6 +87,7 @@ a:focus {
 }
 
 /* skip link for keyboard users */
+/* https://www.w3schools.com/accessibility/accessibility_skip_links.php*/
 .skip-to-main-content {
     position: absolute;
     left: -9999px;
